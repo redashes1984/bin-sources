@@ -1,0 +1,16 @@
+{
+  "_comment": "候选源池。gen.py 每天从这里探测并生成 srcs.json。加/减源只改这个文件。",
+  "http": [
+    {"host": "mirrors.aliyun.com",     "base": "https://mirrors.aliyun.com",           "paths": ["pytorch-wheels/cpu/"]},
+    {"host": "mirrors.huaweicloud.com","base": "https://mirrors.huaweicloud.com",      "paths": ["rocky-linux/9/isos/x86_64/Rocky-9.4-x86_64-minimal.iso"]},
+    {"host": "mirrors.ustc.edu.cn",    "base": "https://mirrors.ustc.edu.cn",          "paths": ["centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso"]},
+    {"host": "mirrors.tuna.tsinghua.edu.cn", "base": "https://mirrors.tuna.tsinghua.edu.cn", "paths": ["ubuntu-releases/24.04.2/ubuntu-24.04.2-desktop-amd64.iso"]}
+  ],
+  "bt": {
+    "trackers": [
+      "https://tracker.fastdownload.xyz:443/announce",
+      "http://tracker.debian.org:80/announce"
+    ],
+    "_comment": "bt 条目 v1 阶段先只留 tracker 探活，种子名由 gen 抓 top-N 后写入 srcs.json"
+  }
+}
