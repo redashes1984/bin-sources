@@ -1,10 +1,15 @@
 {
-  "_comment": "候选源池。gen.py 每天从这里探测并生成 srcs.json。加/减源只改这个文件。",
+  "_comment": "候选源池。gen.py 每天从这里探测并生成 srcs.json。加/减源只改这个文件。每条路径须为可整文件下载的直链（优先几十MB级页面/包，小页面兜底）。",
   "http": [
-    {"host": "mirrors.aliyun.com",     "base": "https://mirrors.aliyun.com",           "paths": ["pytorch-wheels/cpu/"]},
-    {"host": "mirrors.huaweicloud.com","base": "https://mirrors.huaweicloud.com",      "paths": ["rocky-linux/9/isos/x86_64/Rocky-9.4-x86_64-minimal.iso"]},
-    {"host": "mirrors.ustc.edu.cn",    "base": "https://mirrors.ustc.edu.cn",          "paths": ["centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso"]},
-    {"host": "mirrors.tuna.tsinghua.edu.cn", "base": "https://mirrors.tuna.tsinghua.edu.cn", "paths": ["ubuntu-releases/24.04.2/ubuntu-24.04.2-desktop-amd64.iso"]}
+    {"host": "mirrors.huaweicloud.com", "base": "https://mirrors.huaweicloud.com", "paths": ["centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso", "python/3.11.8/Python-3.11.8.tgz", "nginx/nginx-1.24.0.tar.gz"]},
+    {"host": "mirrors.pku.edu.cn",      "base": "https://mirrors.pku.edu.cn",      "paths": ["centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso", "pypi/simple/"]},
+    {"host": "cdn.npmmirror.com",       "base": "https://cdn.npmmirror.com",       "paths": ["binaries/node/v20.11.1/node-v20.11.1-linux-x64.tar.gz"]},
+    {"host": "mirrors.ustc.edu.cn",     "base": "https://mirrors.ustc.edu.cn",     "paths": ["pypi/web/simple/"]},
+    {"host": "mirrors.aliyun.com",      "base": "https://mirrors.aliyun.com",      "paths": ["pytorch-wheels/cpu/"]},
+    {"host": "mirror.sjtu.edu.cn",      "base": "https://mirror.sjtu.edu.cn",      "paths": ["centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso"]},
+    {"host": "mirrors.zju.edu.cn",      "base": "https://mirrors.zju.edu.cn",      "paths": ["python/3.11.8/Python-3.11.8.tgz"]},
+    {"host": "mirrors.nju.edu.cn",      "base": "https://mirrors.nju.edu.cn",      "paths": ["centos/7/isos/x86_64/CentOS-7-x86_64-Everything-2009.iso"]},
+    {"host": "mirrors.cloud.tencent.com","base": "https://mirrors.cloud.tencent.com","paths": ["pypi/simple/"]}
   ],
   "bt": {
     "trackers": [
