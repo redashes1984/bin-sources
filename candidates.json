@@ -22,7 +22,8 @@
     {"host": "mirrors.bjtu.edu.cn", "base": "https://mirrors.bjtu.edu.cn", "paths": ["cmake/", "gimp/", "gradle/"]},
     {"host": "download.edgepulse.com.cn", "base": "https://download.edgepulse.com.cn", "paths": ["image/EdgePulseOS_OP_amd64.iso"]},
     {"host": "xyydcloud-1375085261.cos.ap-beijing.myqcloud.com", "base": "https://xyydcloud-1375085261.cos.ap-beijing.myqcloud.com", "paths": ["image/XYYD-Cloud-Auto-Install-20260907.iso"]},
-    {"host": "vip.123pan.cn", "base": "https://vip.123pan.cn", "paths": ["1824237664/23499068", "1824237664/25076352", "1824237664/23503585", "1824237664/26965051"]}
+    {"host": "vip.123pan.cn", "base": "https://vip.123pan.cn", "paths": ["1824237664/23499068", "1824237664/25076352", "1824237664/23503585", "1824237664/26965051"]},
+    {"host": "oss.shuguangyun.cc", "base": "https://oss.shuguangyun.cc", "paths": ["d/sgy/ShuGuang-%E6%96%B9%E8%88%9F-3.6.4.iso?sign=WHZBnRVvsrk_1WtvpYPSCROHOjxzl4az-xmVFieu4JQ=:0"]}
   ],
   "http": [
     {"host": "mirrors.aliyun.com", "base": "http://mirrors.aliyun.com", "paths": ["pypi/simple/", "ubuntu-releases/22.04/ubuntu-22.04.4-desktop-amd64.iso", "docker-ce/", "mariadb/mariadb-10.6.14-linux-systemd-x86_64.tar.gz", "tomcat/tomcat-9/"]},

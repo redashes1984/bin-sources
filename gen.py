@@ -28,7 +28,7 @@ UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chr
 
 # First-octet set commonly owned by CN Telecom/Unicom/Mobile allocations.
 # Purely a smoke filter for typos in hosts -- not a geo authority.
-CN_FIRST = {1, 14, 27, 36, 39, 42, 49, 58, 59, 60, 61, 68, 72, 87, 90, 94,
+CN_FIRST = {1, 14, 27, 36, 39, 42, 47, 49, 58, 59, 60, 61, 68, 72, 87, 90, 94,
             96, 98, 99, 101, 103, 104, 106, 108, 109, 110, 111, 112, 113,
             114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126,
             127, 133, 134, 135, 136, 137, 138, 139, 140, 142, 144, 146, 147,
