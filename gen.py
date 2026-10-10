@@ -49,13 +49,17 @@ def probe_http(entry):
 
 def probe_bt(cfg):
     out = []
+    for e in cfg.get("entries", []):
+        r = probe_http(e)
+        if r:
+            out.append(r)
     for tr in cfg.get("trackers", []):
         try:
             size, ms = fetch(tr)
-            out.append({"tracker": tr, "ms": ms})
+            out.append({"pick": {"url": tr, "bytes": size, "ms": ms}, "host": "tracker"})
         except Exception:  # noqa: BLE001
             pass
-    out.sort(key=lambda x: x["ms"])
+    out.sort(key=lambda x: x["pick"]["ms"])
     return out
 
 
