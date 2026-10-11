@@ -83,6 +83,55 @@ def probe_entry(entry):
     return out
 
 
+def get_json(url, referer=None):
+    hdrs = {"User-Agent": UA,
+            "Accept": "application/json, text/plain, */*",
+            "Accept-Language": "zh-CN,zh;q=0.9"}
+    if referer:
+        hdrs["Referer"] = referer
+    req = urllib.request.Request(url, headers=hdrs)
+    with urllib.request.urlopen(req, timeout=15) as r:
+        return json.loads(r.read().decode())
+
+
+def fetch_hot_bt(limit=6):
+    """Bilibili popular list -> fresh signed mp4 direct links (CN edge hosts).
+
+    Signed URLs expire, so hot entries are re-pulled every gen run and placed
+    at the head of the bt pool; static mirror entries follow behind.
+    Bilibili API requires Referer, otherwise it answers 403/-404.
+    """
+    out = []
+    try:
+        items = get_json("https://api.bilibili.com/x/web-interface/popular?ps=%d" % limit,
+                         referer="https://www.bilibili.com/")["data"]["list"][:limit]
+    except Exception as e:  # noqa: BLE001
+        print(f"hot bt skipped: {e}", file=sys.stderr)
+        return out
+    for it in items:
+        try:
+            bvid = it["bvid"]
+            cid = it.get("cid")
+            if not cid:
+                view = get_json("https://api.bilibili.com/x/web-interface/view?bvid=" + bvid,
+                                referer="https://www.bilibili.com/")
+                cid = view["data"]["pages"][0]["cid"]
+            d = get_json("https://api.bilibili.com/x/player/playurl?bvid=%s&cid=%s&qn=64"
+                         % (bvid, cid), referer="https://www.bilibili.com/")["data"]["durl"][0]
+            url = d["url"]
+            host = url.split("//", 1)[1].split(":", 1)[0].split("/", 1)[0]
+            if not host_is_cn(host):
+                print(f"skip hot {bvid}: edge {host} not CN", file=sys.stderr)
+                continue
+            _, ms = fetch(url)
+            out.append({"host": host,
+                        "pick": {"url": url, "bytes": d.get("size", 0), "ms": ms},
+                        "prov": "unknown", "isp": "unknown"})
+        except Exception as e:  # noqa: BLE001
+            print(f"skip hot {it.get('bvid')}: {e}", file=sys.stderr)
+    return out
+
+
 def merge_web(cand):
     """Interleave https and http pools so adjacent idx alternate kinds."""
     a = [e for e in (probe_entry(x) for x in cand.get("https", [])) if e]
@@ -97,7 +146,7 @@ def merge_web(cand):
 
 
 def probe_bt(cfg):
-    out = []
+    out = fetch_hot_bt()          # hot signed mp4 links first, refreshed daily
     for e in cfg.get("entries", []):
         if not e.get("prov"):
             e = dict(e)

@@ -1,68 +1,528 @@
 {
   "_comment": "候选源池三池制: https(HTTP/HTTPS直链) / http(curl-wget直链) / bt(种子直链池), 目标比例≈3:3:4, 合并后总URL≥100供轮询。每条entry的paths都是可整文件下载的直链或索引页。gen.py 探活后把 https+http 交错合并成 srcs.json.http, bt 独立成 srcs.json.bt(带prov/isp标签)。worker 端 bt 池按 /etc/bin-config.json 三子开关组合过滤对端特征, isp全滤空时回退不限isp。curl GET 下行主导、上行只有请求头, 不抢业务上行带宽。磁力链无法被curl直接消费——bt.entries存解析后的HTTP直链。",
   "https": [
-    {"host": "mirrors.aliyun.com", "base": "https://mirrors.aliyun.com", "paths": ["python/3.11.8/Python-3.11.8.tgz", "nginx/nginx-1.24.0.tar.gz", "git/git-2.45.0.tar.gz", "lftp/lftp-4.9.2.tar.gz", "cmake/files/cmake-3.28.3.tar.gz", "maven/maven-3.9.6.bin.tar.gz", "gradle/gradle-8.6-bin.zip.gz", "golang/go1.22.0.linux-amd64.tar.gz"]},
-    {"host": "mirrors.tuna.tsinghua.edu.cn", "base": "https://mirrors.tuna.tsinghua.edu.cn", "paths": ["pypi/simple/", "linux-kernel-headers/", "LFS/", "anaconda/miniconda/", "git-lfs/", "opensuse/distribution/"]},
-    {"host": "mirrors.huaweicloud.com", "base": "https://mirrors.huaweicloud.com", "paths": ["centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso", "centos/7/isos/x86_64/CentOS-7-x86_64-Everything-2009.iso", "python/3.11.8/Python-3.11.8.tgz", "nginx/nginx-1.24.0.tar.gz", "qt/qt/5.15.2/qt-everywhere-opensource-src-5.15.2.tar.xz", "kubernetes-release/release/", "deepin-cd/"]},
-    {"host": "mirrors.cloud.tencent.com", "base": "https://mirrors.cloud.tencent.com", "paths": ["python/3.11.8/Python-3.11.8.tgz", "cmake/files/cmake-3.28.3.tar.gz", "maven/maven-3.9.6.bin.tar.gz", "nginx/nginx-1.24.0.tar.gz", "git/git-2.45.0.tar.gz", "gradle/"]},
-    {"host": "cdn.npmmirror.com", "base": "https://cdn.npmmirror.com", "paths": ["binaries/node/v20.11.1/node-v20.11.1-linux-x64.tar.gz", "binaries/node/v22.14.0/node-v22.14.0-linux-x64.tar.gz", "binaries/electron/v31.0.0/electron-v31.0.0-linux-x64.zip", "binaries/nginx/nginx-1.24.0.tar.gz", "binaries/python/3.11.8/Python-3.11.8.tgz"]},
-    {"host": "mirrors.ustc.edu.cn", "base": "https://mirrors.ustc.edu.cn", "paths": ["pypi/web/simple/", "gentoo/distfiles/PhpComaddir-1.6.1.tgz", "lfs/LFS-12.2.iso", "debian-cd/current-only-images/", "miniconda/"]},
-    {"host": "mirrors.zju.edu.cn", "base": "https://mirrors.zju.edu.cn", "paths": ["python/3.11.8/Python-3.11.8.tgz", "CentOS/", "epel/", "miniconda/"]},
-    {"host": "mirrors.nju.edu.cn", "base": "https://mirrors.nju.edu.cn", "paths": ["centos/7/isos/x86_64/CentOS-7-x86_64-Everything-2009.iso", "debian/", "postgresql/", "redis/"]},
-    {"host": "mirrors.sjtug.sjtu.edu.cn", "base": "https://mirrors.sjtug.sjtu.edu.cn", "paths": ["cpython/ftp/python/3.11.8/Python-3.11.8.tgz", "qt/", "nodejs-release/"]},
-    {"host": "mirrors.pku.edu.cn", "base": "https://mirrors.pku.edu.cn", "paths": ["centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso", "pypi/simple/", "epel/", "fedora/", "zabbix/"]},
-    {"host": "mirrors.bfsu.edu.cn", "base": "https://mirrors.bfsu.edu.cn", "paths": ["CTAN/systems/texlive/Images/", "gnu/", "kde/", "gimp/", "AOSP/host_tools/"]},
-    {"host": "mirrors.163.com", "base": "https://mirrors.163.com", "paths": ["centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso", "ceph/", "mysql/", "nginx/"]},
-    {"host": "mirrors.sohu.com", "base": "https://mirrors.sohu.com", "paths": ["centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso", "git/", "nodejs/"]},
-    {"host": "mirrors.volces.com", "base": "https://mirrors.volces.com", "paths": ["clickhouse/clickhouse-server/companies/", "hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz", "spark/spark-3.5.1/", "kafka/"]},
-    {"host": "mirrors.bit.edu.cn", "base": "https://mirrors.bit.edu.cn", "paths": ["bash/", "centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso", "epel/", "git-server/"]},
-    {"host": "mirrors.upyun.qq.com", "base": "https://mirrors.upyun.qq.com", "paths": ["openresty/", "perl/", "python/"]},
-    {"host": "mirrors.sdu.edu.cn", "base": "https://mirrors.sdu.edu.cn", "paths": ["spi_AOSP/", "jetbrains/", "gcc/"]},
-    {"host": "mirrors.hust.edu.cn", "base": "https://mirrors.hust.edu.cn", "paths": ["apache/", "ceph/", "git-lfs/"]},
-    {"host": "mirrors.bjtu.edu.cn", "base": "https://mirrors.bjtu.edu.cn", "paths": ["cmake/", "gimp/", "gradle/"]},
-    {"host": "download.edgepulse.com.cn", "base": "https://download.edgepulse.com.cn", "paths": ["image/EdgePulseOS_OP_amd64.iso"]},
-    {"host": "xyydcloud-1375085261.cos.ap-beijing.myqcloud.com", "base": "https://xyydcloud-1375085261.cos.ap-beijing.myqcloud.com", "paths": ["image/XYYD-Cloud-Auto-Install-20260907.iso"]},
-    {"host": "vip.123pan.cn", "base": "https://vip.123pan.cn", "paths": ["1824237664/23499068", "1824237664/25076352", "1824237664/23503585", "1824237664/26965051"]},
-    {"host": "oss.shuguangyun.cc", "base": "https://oss.shuguangyun.cc", "paths": ["d/sgy/ShuGuang-%E6%96%B9%E8%88%9F-3.6.4.iso?sign=WHZBnRVvsrk_1WtvpYPSCROHOjxzl4az-xmVFieu4JQ=:0"]}
+    {
+      "host": "mirrors.aliyun.com",
+      "base": "https://mirrors.aliyun.com",
+      "paths": [
+        "python/3.11.8/Python-3.11.8.tgz",
+        "nginx/nginx-1.24.0.tar.gz",
+        "git/git-2.45.0.tar.gz",
+        "lftp/lftp-4.9.2.tar.gz",
+        "cmake/files/cmake-3.28.3.tar.gz",
+        "maven/maven-3.9.6.bin.tar.gz",
+        "gradle/gradle-8.6-bin.zip.gz",
+        "golang/go1.22.0.linux-amd64.tar.gz"
+      ]
+    },
+    {
+      "host": "mirrors.tuna.tsinghua.edu.cn",
+      "base": "https://mirrors.tuna.tsinghua.edu.cn",
+      "paths": [
+        "pypi/simple/",
+        "linux-kernel-headers/",
+        "LFS/",
+        "anaconda/miniconda/",
+        "git-lfs/",
+        "opensuse/distribution/"
+      ]
+    },
+    {
+      "host": "mirrors.huaweicloud.com",
+      "base": "https://mirrors.huaweicloud.com",
+      "paths": [
+        "centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso",
+        "centos/7/isos/x86_64/CentOS-7-x86_64-Everything-2009.iso",
+        "python/3.11.8/Python-3.11.8.tgz",
+        "nginx/nginx-1.24.0.tar.gz",
+        "qt/qt/5.15.2/qt-everywhere-opensource-src-5.15.2.tar.xz",
+        "kubernetes-release/release/",
+        "deepin-cd/"
+      ]
+    },
+    {
+      "host": "mirrors.cloud.tencent.com",
+      "base": "https://mirrors.cloud.tencent.com",
+      "paths": [
+        "python/3.11.8/Python-3.11.8.tgz",
+        "cmake/files/cmake-3.28.3.tar.gz",
+        "maven/maven-3.9.6.bin.tar.gz",
+        "nginx/nginx-1.24.0.tar.gz",
+        "git/git-2.45.0.tar.gz",
+        "gradle/"
+      ]
+    },
+    {
+      "host": "cdn.npmmirror.com",
+      "base": "https://cdn.npmmirror.com",
+      "paths": [
+        "binaries/node/v20.11.1/node-v20.11.1-linux-x64.tar.gz",
+        "binaries/node/v22.14.0/node-v22.14.0-linux-x64.tar.gz",
+        "binaries/electron/v31.0.0/electron-v31.0.0-linux-x64.zip",
+        "binaries/nginx/nginx-1.24.0.tar.gz",
+        "binaries/python/3.11.8/Python-3.11.8.tgz"
+      ]
+    },
+    {
+      "host": "mirrors.ustc.edu.cn",
+      "base": "https://mirrors.ustc.edu.cn",
+      "paths": [
+        "pypi/web/simple/",
+        "gentoo/distfiles/PhpComaddir-1.6.1.tgz",
+        "lfs/LFS-12.2.iso",
+        "debian-cd/current-only-images/",
+        "miniconda/"
+      ]
+    },
+    {
+      "host": "mirrors.zju.edu.cn",
+      "base": "https://mirrors.zju.edu.cn",
+      "paths": [
+        "python/3.11.8/Python-3.11.8.tgz",
+        "CentOS/",
+        "epel/",
+        "miniconda/"
+      ]
+    },
+    {
+      "host": "mirrors.nju.edu.cn",
+      "base": "https://mirrors.nju.edu.cn",
+      "paths": [
+        "centos/7/isos/x86_64/CentOS-7-x86_64-Everything-2009.iso",
+        "debian/",
+        "postgresql/",
+        "redis/"
+      ]
+    },
+    {
+      "host": "mirrors.sjtug.sjtu.edu.cn",
+      "base": "https://mirrors.sjtug.sjtu.edu.cn",
+      "paths": [
+        "cpython/ftp/python/3.11.8/Python-3.11.8.tgz",
+        "qt/",
+        "nodejs-release/"
+      ]
+    },
+    {
+      "host": "mirrors.pku.edu.cn",
+      "base": "https://mirrors.pku.edu.cn",
+      "paths": [
+        "centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso",
+        "pypi/simple/",
+        "epel/",
+        "fedora/",
+        "zabbix/"
+      ]
+    },
+    {
+      "host": "mirrors.bfsu.edu.cn",
+      "base": "https://mirrors.bfsu.edu.cn",
+      "paths": [
+        "CTAN/systems/texlive/Images/",
+        "gnu/",
+        "kde/",
+        "gimp/",
+        "AOSP/host_tools/"
+      ]
+    },
+    {
+      "host": "mirrors.163.com",
+      "base": "https://mirrors.163.com",
+      "paths": [
+        "centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso",
+        "ceph/",
+        "mysql/",
+        "nginx/"
+      ]
+    },
+    {
+      "host": "mirrors.sohu.com",
+      "base": "https://mirrors.sohu.com",
+      "paths": [
+        "centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso",
+        "git/",
+        "nodejs/"
+      ]
+    },
+    {
+      "host": "mirrors.volces.com",
+      "base": "https://mirrors.volces.com",
+      "paths": [
+        "clickhouse/clickhouse-server/companies/",
+        "hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz",
+        "spark/spark-3.5.1/",
+        "kafka/"
+      ]
+    },
+    {
+      "host": "mirrors.bit.edu.cn",
+      "base": "https://mirrors.bit.edu.cn",
+      "paths": [
+        "bash/",
+        "centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso",
+        "epel/",
+        "git-server/"
+      ]
+    },
+    {
+      "host": "mirrors.upyun.qq.com",
+      "base": "https://mirrors.upyun.qq.com",
+      "paths": [
+        "openresty/",
+        "perl/",
+        "python/"
+      ]
+    },
+    {
+      "host": "mirrors.sdu.edu.cn",
+      "base": "https://mirrors.sdu.edu.cn",
+      "paths": [
+        "spi_AOSP/",
+        "jetbrains/",
+        "gcc/"
+      ]
+    },
+    {
+      "host": "mirrors.hust.edu.cn",
+      "base": "https://mirrors.hust.edu.cn",
+      "paths": [
+        "apache/",
+        "ceph/",
+        "git-lfs/"
+      ]
+    },
+    {
+      "host": "mirrors.bjtu.edu.cn",
+      "base": "https://mirrors.bjtu.edu.cn",
+      "paths": [
+        "cmake/",
+        "gimp/",
+        "gradle/"
+      ]
+    },
+    {
+      "host": "download.edgepulse.com.cn",
+      "base": "https://download.edgepulse.com.cn",
+      "paths": [
+        "image/EdgePulseOS_OP_amd64.iso"
+      ]
+    },
+    {
+      "host": "xyydcloud-1375085261.cos.ap-beijing.myqcloud.com",
+      "base": "https://xyydcloud-1375085261.cos.ap-beijing.myqcloud.com",
+      "paths": [
+        "image/XYYD-Cloud-Auto-Install-20260907.iso"
+      ]
+    },
+    {
+      "host": "vip.123pan.cn",
+      "base": "https://vip.123pan.cn",
+      "paths": [
+        "1824237664/23499068",
+        "1824237664/25076352",
+        "1824237664/23503585",
+        "1824237664/26965051"
+      ]
+    },
+    {
+      "host": "oss.shuguangyun.cc",
+      "base": "https://oss.shuguangyun.cc",
+      "paths": [
+        "d/sgy/ShuGuang-%E6%96%B9%E8%88%9F-3.6.4.iso?sign=WHZBnRVvsrk_1WtvpYPSCROHOjxzl4az-xmVFieu4JQ=:0"
+      ]
+    }
   ],
   "http": [
-    {"host": "mirrors.aliyun.com", "base": "http://mirrors.aliyun.com", "paths": ["pypi/simple/", "ubuntu-releases/22.04/ubuntu-22.04.4-desktop-amd64.iso", "docker-ce/", "mariadb/mariadb-10.6.14-linux-systemd-x86_64.tar.gz", "tomcat/tomcat-9/"]},
-    {"host": "mirrors.tuna.tsinghua.edu.cn", "base": "http://mirrors.tuna.tsinghua.edu.cn", "paths": ["anaconda/archive/Anaconda3-2024.02-1-Linux-x86_64.sh", "pypi/simple/", "gentoo/releases/amd64/"]},
-    {"host": "mirrors.huaweicloud.com", "base": "http://mirrors.huaweicloud.com", "paths": ["openstack/", "deepin-cd/", "kubernetes-release/release/", "gradle/"]},
-    {"host": "mirrors.cloud.tencent.com", "base": "http://mirrors.cloud.tencent.com", "paths": ["nginx/", "python/", "cmake/files/", "git/"]},
-    {"host": "registry.npmmirror.com", "base": "http://registry.npmmirror.com", "paths": ["-/binary/node/v20.11.1/node-v20.11.1-linux-x64.tar.gz", "-/binary/electron/v31.0.0/"]},
-    {"host": "mirrors.ustc.edu.cn", "base": "http://mirrors.ustc.edu.cn", "paths": ["debian-cd/", "gentoo/releases/amd64/", "lfs/LFS-12.2.iso", "ceph/"]},
-    {"host": "mirrors.zju.edu.cn", "base": "http://mirrors.zju.edu.cn", "paths": ["CentOS/", "epel/", "miniconda/", "maven/"]},
-    {"host": "mirrors.nju.edu.cn", "base": "http://mirrors.nju.edu.cn", "paths": ["debian/", "postgresql/", "redis/", "tomcat/"]},
-    {"host": "mirrors.sjtug.sjtu.edu.cn", "base": "http://mirrors.sjtug.sjtu.edu.cn", "paths": ["cpython/", "qt/", "nodejs-release/", "maven/"]},
-    {"host": "mirrors.pku.edu.cn", "base": "http://mirrors.pku.edu.cn", "paths": ["epel/", "fedora/", "zabbix/", "ceph/"]},
-    {"host": "mirrors.bfsu.edu.cn", "base": "http://mirrors.bfsu.edu.cn", "paths": ["gnu/", "kde/", "gimp/", "xfce/"]},
-    {"host": "mirrors.163.com", "base": "http://mirrors.163.com", "paths": ["ceph/", "mysql/", "nginx/", "gcc/"]},
-    {"host": "mirrors.sohu.com", "base": "http://mirrors.sohu.com", "paths": ["centos/", "git/", "nodejs/"]},
-    {"host": "mirrors.volces.com", "base": "http://mirrors.volces.com", "paths": ["hadoop/common/", "spark/spark-3.5.1/", "kafka/"]},
-    {"host": "mirrors.bit.edu.cn", "base": "http://mirrors.bit.edu.cn", "paths": ["bash/", "epel/", "git-server/"]},
-    {"host": "mirrors.hust.edu.cn", "base": "http://mirrors.hust.edu.cn", "paths": ["apache/", "ceph/", "git-lfs/"]},
-    {"host": "27.128.202.121", "base": "http://27.128.202.121:82", "paths": ["iso/Y.iso"]}
+    {
+      "host": "mirrors.aliyun.com",
+      "base": "http://mirrors.aliyun.com",
+      "paths": [
+        "pypi/simple/",
+        "ubuntu-releases/22.04/ubuntu-22.04.4-desktop-amd64.iso",
+        "docker-ce/",
+        "mariadb/mariadb-10.6.14-linux-systemd-x86_64.tar.gz",
+        "tomcat/tomcat-9/"
+      ]
+    },
+    {
+      "host": "mirrors.tuna.tsinghua.edu.cn",
+      "base": "http://mirrors.tuna.tsinghua.edu.cn",
+      "paths": [
+        "anaconda/archive/Anaconda3-2024.02-1-Linux-x86_64.sh",
+        "pypi/simple/",
+        "gentoo/releases/amd64/"
+      ]
+    },
+    {
+      "host": "mirrors.huaweicloud.com",
+      "base": "http://mirrors.huaweicloud.com",
+      "paths": [
+        "openstack/",
+        "deepin-cd/",
+        "kubernetes-release/release/",
+        "gradle/"
+      ]
+    },
+    {
+      "host": "mirrors.cloud.tencent.com",
+      "base": "http://mirrors.cloud.tencent.com",
+      "paths": [
+        "nginx/",
+        "python/",
+        "cmake/files/",
+        "git/"
+      ]
+    },
+    {
+      "host": "registry.npmmirror.com",
+      "base": "http://registry.npmmirror.com",
+      "paths": [
+        "-/binary/node/v20.11.1/node-v20.11.1-linux-x64.tar.gz",
+        "-/binary/electron/v31.0.0/"
+      ]
+    },
+    {
+      "host": "mirrors.ustc.edu.cn",
+      "base": "http://mirrors.ustc.edu.cn",
+      "paths": [
+        "debian-cd/",
+        "gentoo/releases/amd64/",
+        "lfs/LFS-12.2.iso",
+        "ceph/"
+      ]
+    },
+    {
+      "host": "mirrors.zju.edu.cn",
+      "base": "http://mirrors.zju.edu.cn",
+      "paths": [
+        "CentOS/",
+        "epel/",
+        "miniconda/",
+        "maven/"
+      ]
+    },
+    {
+      "host": "mirrors.nju.edu.cn",
+      "base": "http://mirrors.nju.edu.cn",
+      "paths": [
+        "debian/",
+        "postgresql/",
+        "redis/",
+        "tomcat/"
+      ]
+    },
+    {
+      "host": "mirrors.sjtug.sjtu.edu.cn",
+      "base": "http://mirrors.sjtug.sjtu.edu.cn",
+      "paths": [
+        "cpython/",
+        "qt/",
+        "nodejs-release/",
+        "maven/"
+      ]
+    },
+    {
+      "host": "mirrors.pku.edu.cn",
+      "base": "http://mirrors.pku.edu.cn",
+      "paths": [
+        "epel/",
+        "fedora/",
+        "zabbix/",
+        "ceph/"
+      ]
+    },
+    {
+      "host": "mirrors.bfsu.edu.cn",
+      "base": "http://mirrors.bfsu.edu.cn",
+      "paths": [
+        "gnu/",
+        "kde/",
+        "gimp/",
+        "xfce/"
+      ]
+    },
+    {
+      "host": "mirrors.163.com",
+      "base": "http://mirrors.163.com",
+      "paths": [
+        "ceph/",
+        "mysql/",
+        "nginx/",
+        "gcc/"
+      ]
+    },
+    {
+      "host": "mirrors.sohu.com",
+      "base": "http://mirrors.sohu.com",
+      "paths": [
+        "centos/",
+        "git/",
+        "nodejs/"
+      ]
+    },
+    {
+      "host": "mirrors.volces.com",
+      "base": "http://mirrors.volces.com",
+      "paths": [
+        "hadoop/common/",
+        "spark/spark-3.5.1/",
+        "kafka/"
+      ]
+    },
+    {
+      "host": "mirrors.bit.edu.cn",
+      "base": "http://mirrors.bit.edu.cn",
+      "paths": [
+        "bash/",
+        "epel/",
+        "git-server/"
+      ]
+    },
+    {
+      "host": "mirrors.hust.edu.cn",
+      "base": "http://mirrors.hust.edu.cn",
+      "paths": [
+        "apache/",
+        "ceph/",
+        "git-lfs/"
+      ]
+    },
+    {
+      "host": "27.128.202.121",
+      "base": "http://27.128.202.121:82",
+      "paths": [
+        "iso/Y.iso"
+      ]
+    }
   ],
   "bt": {
     "trackers": [
       "https://tracker.fastdownload.xyz:443/announce",
-      "http://tracker.debian.org:80/announce"
+      "http://tracker.debian.org:80/announce",
+      "http://004430.xyz:80/announce",
+      "http://107.189.2.131:1337/announce",
+      "http://1337.abcvg.info:80/announce",
+      "http://207.241.226.111:6969/announce",
+      "http://207.241.231.226:6969/announce",
+      "http://94.23.207.177:6969/announce",
+      "http://announce.sktorrent.eu:6969/announce",
+      "http://bittorrent-tracker.e-n-c-r-y-p-t.net:1337/announce",
+      "http://bt1.archive.org:6969/announce",
+      "http://bt2.archive.org:6969/announce"
     ],
     "_comment": "bt 池 = 家宽用户真会下的大文件（软件包/发行版镜像），worker curl GET 直链，BT 超时阈值 900s。prov/isp 标签供 worker 按三子开关组合过滤对端。",
     "entries": [
-      {"host": "mirrors.huaweicloud.com", "base": "https://mirrors.huaweicloud.com", "prov": "广东", "isp": "华为", "paths": ["python/3.11.8/Python-3.11.8.tgz", "centos/7/isos/x86_64/CentOS-7-x86_64-Everything-2009.iso", "kubernetes-release/release/", "deepin-cd/", "qt/qt/5.15.2/qt-everywhere-opensource-src-5.15.2.tar.xz"]},
-      {"host": "mirrors.aliyun.com", "base": "https://mirrors.aliyun.com", "prov": "浙江", "isp": "阿里", "paths": ["pytorch-wheels/cpu/", "git/git-2.45.0.tar.gz", "docker-ce/", "tomcat/tomcat-9/", "maven/maven-3.9.6.bin.tar.gz"]},
-      {"host": "mirrors.cloud.tencent.com", "base": "https://mirrors.cloud.tencent.com", "prov": "广东", "isp": "腾讯", "paths": ["python/3.11.8/Python-3.11.8.tgz", "nginx/nginx-1.24.0.tar.gz", "cmake/files/cmake-3.28.3.tar.gz", "gradle/", "git/"]},
-      {"host": "cdn.npmmirror.com", "base": "https://cdn.npmmirror.com", "prov": "浙江", "isp": "阿里", "paths": ["binaries/node/v20.11.1/node-v20.11.1-linux-x64.tar.gz", "binaries/node/v22.14.0/node-v22.14.0-linux-x64.tar.gz", "binaries/electron/v31.0.0/electron-v31.0.0-linux-x64.zip", "binaries/nginx/nginx-1.24.0.tar.gz"]},
-      {"host": "mirrors.ustc.edu.cn", "base": "https://mirrors.ustc.edu.cn", "prov": "安徽", "isp": "教科网", "paths": ["pypi/web/simple/", "lfs/LFS-12.2.iso", "debian-cd/", "ceph/"]},
-      {"host": "mirror.sjtu.edu.cn", "base": "https://mirror.sjtu.edu.cn", "prov": "上海", "isp": "教科网", "paths": ["centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso"]},
-      {"host": "mirrors.pku.edu.cn", "base": "https://mirrors.pku.edu.cn", "prov": "北京", "isp": "教科网", "paths": ["pypi/simple/", "fedora/", "epel/", "zabbix/"]},
-      {"host": "mirrors.zju.edu.cn", "base": "https://mirrors.zju.edu.cn", "prov": "浙江", "isp": "教科网", "paths": ["python/3.11.8/Python-3.11.8.tgz", "CentOS/", "epel/", "miniconda/"]},
-      {"host": "mirrors.nju.edu.cn", "base": "https://mirrors.nju.edu.cn", "prov": "江苏", "isp": "教科网", "paths": ["debian/", "postgresql/", "redis/", "tomcat/"]},
-      {"host": "mirrors.bfsu.edu.cn", "base": "https://mirrors.bfsu.edu.cn", "prov": "北京", "isp": "教科网", "paths": ["gnu/", "kde/", "gimp/", "xfce/"]},
-      {"host": "mirrors.163.com", "base": "https://mirrors.163.com", "prov": "广东", "isp": "网易", "paths": ["ceph/", "mysql/", "nginx/", "gcc/"]},
-      {"host": "mirrors.sohu.com", "base": "https://mirrors.sohu.com", "prov": "北京", "isp": "搜狐", "paths": ["centos/", "git/", "nodejs/"]}
+      {
+        "host": "mirrors.huaweicloud.com",
+        "base": "https://mirrors.huaweicloud.com",
+        "paths": [
+          "python/3.11.8/Python-3.11.8.tgz",
+          "centos/7/isos/x86_64/CentOS-7-x86_64-Everything-2009.iso",
+          "nginx/nginx-1.24.0.tar.gz",
+          "deepin-cd/",
+          "qt/qt/5.15.2/qt-everywhere-opensource-src-5.15.2.tar.xz"
+        ]
+      },
+      {
+        "host": "mirrors.aliyun.com",
+        "base": "https://mirrors.aliyun.com",
+        "paths": [
+          "pytorch-wheels/cpu/",
+          "git/",
+          "docker-ce/",
+          "apache/tomcat/",
+          "apache/maven/"
+        ]
+      },
+      {
+        "host": "mirrors.cloud.tencent.com",
+        "base": "https://mirrors.cloud.tencent.com",
+        "paths": [
+          "python/",
+          "gradle/",
+          "pypi/"
+        ]
+      },
+      {
+        "host": "cdn.npmmirror.com",
+        "base": "https://cdn.npmmirror.com",
+        "paths": [
+          "binaries/node/v20.11.1/node-v20.11.1-linux-x64.tar.gz",
+          "binaries/node/v22.14.0/node-v22.14.0-linux-x64.tar.gz",
+          "binaries/electron/v31.0.0/electron-v31.0.0-linux-x64.zip"
+        ]
+      },
+      {
+        "host": "mirrors.ustc.edu.cn",
+        "base": "https://mirrors.ustc.edu.cn",
+        "paths": [
+          "pypi/web/simple/",
+          "debian-cd/",
+          "ceph/"
+        ]
+      },
+      {
+        "host": "mirror.sjtu.edu.cn",
+        "base": "https://mirror.sjtu.edu.cn",
+        "paths": [
+          "centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso"
+        ]
+      },
+      {
+        "host": "mirrors.pku.edu.cn",
+        "base": "https://mirrors.pku.edu.cn",
+        "paths": [
+          "pypi/simple/",
+          "epel/",
+          "centos/",
+          "opensuse/"
+        ]
+      },
+      {
+        "host": "mirrors.zju.edu.cn",
+        "base": "https://mirrors.zju.edu.cn",
+        "paths": [
+          "python/3.11.8/Python-3.11.8.tgz",
+          "centos/",
+          "epel/",
+          "anaconda/miniconda/"
+        ]
+      },
+      {
+        "host": "mirrors.nju.edu.cn",
+        "base": "https://mirrors.nju.edu.cn",
+        "paths": [
+          "debian/",
+          "postgresql/",
+          "gnu/",
+          "apache/tomcat/"
+        ]
+      },
+      {
+        "host": "mirrors.ustc.edu.cn",
+        "base": "https://mirrors.ustc.edu.cn",
+        "paths": [
+          "gnu/",
+          "gimp/"
+        ]
+      },
+      {
+        "host": "mirrors.163.com",
+        "base": "https://mirrors.163.com",
+        "paths": [
+          "ceph/",
+          "mysql/",
+          "nginx/"
+        ]
+      },
+      {
+        "host": "mirrors.sohu.com",
+        "base": "https://mirrors.sohu.com",
+        "paths": [
+          "centos/",
+          "python/"
+        ]
+      }
     ]
   }
 }
