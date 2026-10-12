@@ -507,11 +507,17 @@
         ]
       },
       {
-        "host": "mirrors.163.com",
-        "base": "https://mirrors.163.com",
+        "host": "mirrors.aliyun.com",
+        "base": "https://mirrors.aliyun.com",
         "paths": [
           "ceph/",
-          "mysql/",
+          "mysql/"
+        ]
+      },
+      {
+        "host": "mirrors.huaweicloud.com",
+        "base": "https://mirrors.huaweicloud.com",
+        "paths": [
           "nginx/"
         ]
       },
