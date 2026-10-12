@@ -396,6 +396,10 @@
     }
   ],
   "bt": {
+    "magnets": [
+      "magnet:?xt=urn:btih:2e8e44068b254814ea1a7d4969a9af1d78e0f51f&dn=ubuntu-22.04.5-desktop-amd64.iso&tr=https://torrent.ubuntu.com/announce&tr=https://ipv6.torrent.ubuntu.com/announce",
+      "magnet:?xt=urn:btih:95c6c298c84fee2eee10c044d673537da158f0f8&dn=ubuntu-22.04.5-live-server-amd64.iso&tr=https://torrent.ubuntu.com/announce&tr=https://ipv6.torrent.ubuntu.com/announce"
+    ],
     "trackers": [
       "https://tracker.fastdownload.xyz:443/announce",
       "http://tracker.debian.org:80/announce",

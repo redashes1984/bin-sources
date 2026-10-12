@@ -41,6 +41,11 @@ CN_FIRST = {1, 14, 27, 36, 39, 42, 47, 49, 58, 59, 60, 61, 68, 72, 87, 90, 94,
 
 
 def fetch(url, timeout=12):
+    # Magnet URIs are content-addressed and carry their own trackers in
+    # &tr=; nothing to probe over HTTP — accept instantly so magnet entries
+    # survive regeneration without a fetch round-trip.
+    if url.startswith("magnet:?"):
+        return 0, 0.0
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Range": "bytes=0-262143"})
     t0 = time.monotonic()
     with urllib.request.urlopen(req, timeout=timeout) as r:
@@ -147,6 +152,11 @@ def merge_web(cand):
 
 def probe_bt(cfg):
     out = fetch_hot_bt()          # hot signed mp4 links first, refreshed daily
+    # Pre-parsed magnet URIs (tools/t2m.py output). Content-addressed, so
+    # unlike signed CDN urls they never expire; consumed directly by aria2c.
+    for mag in cfg.get("magnets", []):
+        out.append({"pick": {"url": mag, "bytes": 0, "ms": 0.0},
+                    "host": "magnet", "prov": "unknown", "isp": "unknown"})
     for e in cfg.get("entries", []):
         if not e.get("prov"):
             e = dict(e)

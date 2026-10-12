@@ -1,64 +1,54 @@
 {
  "schema": 2,
  "date": "2026-10-13",
- "generated_at": 1791830219,
+ "generated_at": 1791831611,
  "http": [
   {
    "host": "mirrors.aliyun.com",
    "pick": {
     "url": "https://mirrors.aliyun.com/golang/go1.22.0.linux-amd64.tar.gz",
     "bytes": 262144,
-    "ms": 0.508
+    "ms": 0.252
    },
    "alts": []
   },
   {
    "host": "mirrors.aliyun.com",
    "pick": {
-    "url": "http://mirrors.aliyun.com/pypi/simple/",
-    "bytes": 262144,
-    "ms": 0.198
+    "url": "http://mirrors.aliyun.com/docker-ce/",
+    "bytes": 29488,
+    "ms": 0.016
    },
    "alts": [
     {
-     "url": "http://mirrors.aliyun.com/docker-ce/",
-     "bytes": 29488,
-     "ms": 0.224
+     "url": "http://mirrors.aliyun.com/pypi/simple/",
+     "bytes": 262144,
+     "ms": 0.203
     }
    ]
   },
   {
    "host": "mirrors.huaweicloud.com",
    "pick": {
-    "url": "https://mirrors.huaweicloud.com/qt/qt/5.15.2/qt-everywhere-opensource-src-5.15.2.tar.xz",
-    "bytes": 12434,
-    "ms": 0.199
+    "url": "https://mirrors.huaweicloud.com/deepin-cd/",
+    "bytes": 7147,
+    "ms": 0.139
    },
    "alts": [
     {
-     "url": "https://mirrors.huaweicloud.com/deepin-cd/",
-     "bytes": 7147,
-     "ms": 0.2
+     "url": "https://mirrors.huaweicloud.com/qt/qt/5.15.2/qt-everywhere-opensource-src-5.15.2.tar.xz",
+     "bytes": 12434,
+     "ms": 0.193
     },
     {
      "url": "https://mirrors.huaweicloud.com/nginx/nginx-1.24.0.tar.gz",
      "bytes": 262144,
-     "ms": 0.309
-    },
-    {
-     "url": "https://mirrors.huaweicloud.com/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-2009.iso",
-     "bytes": 262144,
-     "ms": 0.344
-    },
-    {
-     "url": "https://mirrors.huaweicloud.com/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso",
-     "bytes": 262144,
-     "ms": 0.362
+     "ms": 0.408
     },
     {
      "url": "https://mirrors.huaweicloud.com/python/3.11.8/Python-3.11.8.tgz",
      "bytes": 262144,
-     "ms": 0.386
+     "ms": 0.415
     }
    ]
   },
@@ -67,18 +57,18 @@
    "pick": {
     "url": "http://mirrors.huaweicloud.com/deepin-cd/",
     "bytes": 7147,
-    "ms": 0.077
+    "ms": 0.097
    },
    "alts": [
     {
      "url": "http://mirrors.huaweicloud.com/openstack/",
      "bytes": 12434,
-     "ms": 0.305
+     "ms": 0.333
     },
     {
      "url": "http://mirrors.huaweicloud.com/gradle/",
      "bytes": 804446,
-     "ms": 1.135
+     "ms": 0.47
     }
    ]
   },
@@ -87,7 +77,7 @@
    "pick": {
     "url": "https://mirrors.cloud.tencent.com/gradle/",
     "bytes": 262144,
-    "ms": 0.07
+    "ms": 0.062
    },
    "alts": []
   },
@@ -96,32 +86,32 @@
    "pick": {
     "url": "http://mirrors.cloud.tencent.com/python/",
     "bytes": 149,
-    "ms": 0.116
+    "ms": 0.073
    },
    "alts": []
   },
   {
    "host": "cdn.npmmirror.com",
    "pick": {
-    "url": "https://cdn.npmmirror.com/binaries/electron/v31.0.0/electron-v31.0.0-linux-x64.zip",
+    "url": "https://cdn.npmmirror.com/binaries/node/v20.11.1/node-v20.11.1-linux-x64.tar.gz",
     "bytes": 262144,
-    "ms": 0.129
+    "ms": 0.289
    },
    "alts": [
     {
      "url": "https://cdn.npmmirror.com/binaries/node/v22.14.0/node-v22.14.0-linux-x64.tar.gz",
      "bytes": 262144,
-     "ms": 0.284
+     "ms": 0.289
     },
     {
-     "url": "https://cdn.npmmirror.com/binaries/node/v20.11.1/node-v20.11.1-linux-x64.tar.gz",
+     "url": "https://cdn.npmmirror.com/binaries/electron/v31.0.0/electron-v31.0.0-linux-x64.zip",
      "bytes": 262144,
-     "ms": 0.341
+     "ms": 0.332
     },
     {
      "url": "https://cdn.npmmirror.com/binaries/python/3.11.8/Python-3.11.8.tgz",
      "bytes": 262144,
-     "ms": 0.364
+     "ms": 0.352
     }
    ]
   },
@@ -130,13 +120,13 @@
    "pick": {
     "url": "http://registry.npmmirror.com/-/binary/electron/v31.0.0/",
     "bytes": 19458,
-    "ms": 0.136
+    "ms": 0.116
    },
    "alts": [
     {
      "url": "http://registry.npmmirror.com/-/binary/node/v20.11.1/node-v20.11.1-linux-x64.tar.gz",
      "bytes": 262144,
-     "ms": 0.473
+     "ms": 0.481
     }
    ]
   },
@@ -145,18 +135,18 @@
    "pick": {
     "url": "https://mirrors.ustc.edu.cn/pypi/web/simple/",
     "bytes": 879,
-    "ms": 0.211
+    "ms": 0.204
    },
    "alts": [
     {
      "url": "https://mirrors.ustc.edu.cn/gentoo/distfiles/PhpComaddir-1.6.1.tgz",
      "bytes": 879,
-     "ms": 0.992
+     "ms": 1.002
     },
     {
      "url": "https://mirrors.ustc.edu.cn/lfs/LFS-12.2.iso",
      "bytes": 879,
-     "ms": 1.011
+     "ms": 1.002
     }
    ]
   },
@@ -165,38 +155,38 @@
    "pick": {
     "url": "http://mirrors.ustc.edu.cn/debian-cd/",
     "bytes": 7197,
-    "ms": 0.093
+    "ms": 0.091
    },
    "alts": [
     {
-     "url": "http://mirrors.ustc.edu.cn/gentoo/releases/amd64/",
-     "bytes": 6306,
-     "ms": 0.992
-    },
-    {
      "url": "http://mirrors.ustc.edu.cn/lfs/LFS-12.2.iso",
      "bytes": 879,
-     "ms": 0.997
+     "ms": 0.964
+    },
+    {
+     "url": "http://mirrors.ustc.edu.cn/gentoo/releases/amd64/",
+     "bytes": 6306,
+     "ms": 1.034
     },
     {
      "url": "http://mirrors.ustc.edu.cn/ceph/",
      "bytes": 53118,
-     "ms": 1.057
+     "ms": 1.046
     }
    ]
   },
   {
    "host": "mirrors.zju.edu.cn",
    "pick": {
-    "url": "https://mirrors.zju.edu.cn/epel/",
-    "bytes": 39829,
-    "ms": 0.29
+    "url": "https://mirrors.zju.edu.cn/python/3.11.8/Python-3.11.8.tgz",
+    "bytes": 262144,
+    "ms": 4.829
    },
    "alts": [
     {
-     "url": "https://mirrors.zju.edu.cn/python/3.11.8/Python-3.11.8.tgz",
-     "bytes": 262144,
-     "ms": 8.051
+     "url": "https://mirrors.zju.edu.cn/epel/",
+     "bytes": 39829,
+     "ms": 6.081
     }
    ]
   },
@@ -205,27 +195,27 @@
    "pick": {
     "url": "http://mirrors.zju.edu.cn/epel/",
     "bytes": 39829,
-    "ms": 0.277
+    "ms": 2.431
    },
    "alts": []
   },
   {
    "host": "mirrors.nju.edu.cn",
    "pick": {
-    "url": "https://mirrors.nju.edu.cn/postgresql/",
-    "bytes": 7572,
-    "ms": 0.111
+    "url": "https://mirrors.nju.edu.cn/debian/",
+    "bytes": 8027,
+    "ms": 0.118
    },
    "alts": [
     {
-     "url": "https://mirrors.nju.edu.cn/debian/",
-     "bytes": 8027,
-     "ms": 0.144
+     "url": "https://mirrors.nju.edu.cn/postgresql/",
+     "bytes": 7572,
+     "ms": 0.122
     },
     {
      "url": "https://mirrors.nju.edu.cn/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-2009.iso",
      "bytes": 262144,
-     "ms": 0.263
+     "ms": 0.261
     }
    ]
   },
@@ -234,13 +224,13 @@
    "pick": {
     "url": "http://mirrors.nju.edu.cn/debian/",
     "bytes": 8027,
-    "ms": 0.095
+    "ms": 0.082
    },
    "alts": [
     {
      "url": "http://mirrors.nju.edu.cn/postgresql/",
      "bytes": 7572,
-     "ms": 0.1
+     "ms": 0.094
     }
    ]
   },
@@ -248,19 +238,19 @@
    "host": "mirrors.sjtug.sjtu.edu.cn",
    "pick": {
     "url": "https://mirrors.sjtug.sjtu.edu.cn/cpython/ftp/python/3.11.8/Python-3.11.8.tgz",
-    "bytes": 5093,
-    "ms": 0.216
+    "bytes": 5094,
+    "ms": 0.192
    },
    "alts": [
     {
      "url": "https://mirrors.sjtug.sjtu.edu.cn/qt/",
      "bytes": 33300,
-     "ms": 0.389
+     "ms": 0.378
     },
     {
      "url": "https://mirrors.sjtug.sjtu.edu.cn/nodejs-release/",
      "bytes": 115026,
-     "ms": 0.769
+     "ms": 0.724
     }
    ]
   },
@@ -269,13 +259,13 @@
    "pick": {
     "url": "http://mirrors.sjtug.sjtu.edu.cn/qt/",
     "bytes": 33300,
-    "ms": 0.488
+    "ms": 0.441
    },
    "alts": [
     {
      "url": "http://mirrors.sjtug.sjtu.edu.cn/nodejs-release/",
      "bytes": 115026,
-     "ms": 0.762
+     "ms": 0.767
     }
    ]
   },
@@ -288,14 +278,14 @@
    },
    "alts": [
     {
-     "url": "https://mirrors.pku.edu.cn/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso",
-     "bytes": 262144,
-     "ms": 0.32
-    },
-    {
      "url": "https://mirrors.pku.edu.cn/pypi/simple/",
      "bytes": 262144,
-     "ms": 0.32
+     "ms": 0.242
+    },
+    {
+     "url": "https://mirrors.pku.edu.cn/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso",
+     "bytes": 262144,
+     "ms": 0.328
     }
    ]
   },
@@ -304,105 +294,47 @@
    "pick": {
     "url": "http://mirrors.pku.edu.cn/epel/",
     "bytes": 597,
-    "ms": 0.176
-   },
-   "alts": []
-  },
-  {
-   "host": "mirrors.163.com",
-   "pick": {
-    "url": "https://mirrors.163.com/mysql/",
-    "bytes": 559,
-    "ms": 0.186
-   },
-   "alts": [
-    {
-     "url": "https://mirrors.163.com/nginx/",
-     "bytes": 345,
-     "ms": 0.313
-    },
-    {
-     "url": "https://mirrors.163.com/ceph/",
-     "bytes": 21662,
-     "ms": 0.556
-    }
-   ]
-  },
-  {
-   "host": "mirrors.163.com",
-   "pick": {
-    "url": "http://mirrors.163.com/nginx/",
-    "bytes": 345,
-    "ms": 0.172
-   },
-   "alts": [
-    {
-     "url": "http://mirrors.163.com/mysql/",
-     "bytes": 559,
-     "ms": 0.286
-    },
-    {
-     "url": "http://mirrors.163.com/ceph/",
-     "bytes": 21662,
-     "ms": 0.494
-    }
-   ]
-  },
-  {
-   "host": "mirrors.sohu.com",
-   "pick": {
-    "url": "https://mirrors.sohu.com/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso",
-    "bytes": 262144,
-    "ms": 21.055
-   },
-   "alts": []
-  },
-  {
-   "host": "mirrors.sohu.com",
-   "pick": {
-    "url": "http://mirrors.sohu.com/centos/",
-    "bytes": 15721,
-    "ms": 1.299
+    "ms": 0.197
    },
    "alts": []
   },
   {
    "host": "mirrors.volces.com",
    "pick": {
-    "url": "https://mirrors.volces.com/spark/spark-3.5.1/",
+    "url": "https://mirrors.volces.com/kafka/",
     "bytes": 95591,
-    "ms": 0.5
+    "ms": 0.579
    },
    "alts": [
     {
-     "url": "https://mirrors.volces.com/kafka/",
+     "url": "https://mirrors.volces.com/spark/spark-3.5.1/",
      "bytes": 95591,
-     "ms": 0.6
+     "ms": 0.717
     },
     {
      "url": "https://mirrors.volces.com/hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz",
      "bytes": 95591,
-     "ms": 0.806
+     "ms": 0.883
     }
    ]
   },
   {
-   "host": "mirrors.volces.com",
+   "host": "mirrors.163.com",
    "pick": {
-    "url": "http://mirrors.volces.com/kafka/",
-    "bytes": 95591,
-    "ms": 0.571
+    "url": "http://mirrors.163.com/mysql/",
+    "bytes": 559,
+    "ms": 0.358
    },
    "alts": [
     {
-     "url": "http://mirrors.volces.com/spark/spark-3.5.1/",
-     "bytes": 95591,
-     "ms": 0.756
+     "url": "http://mirrors.163.com/ceph/",
+     "bytes": 21662,
+     "ms": 0.502
     },
     {
-     "url": "http://mirrors.volces.com/hadoop/common/",
-     "bytes": 95591,
-     "ms": 0.931
+     "url": "http://mirrors.163.com/nginx/",
+     "bytes": 345,
+     "ms": 0.531
     }
    ]
   },
@@ -411,36 +343,56 @@
    "pick": {
     "url": "https://mirrors.sdu.edu.cn/gcc/",
     "bytes": 2913,
-    "ms": 0.231
+    "ms": 0.216
    },
    "alts": [
     {
      "url": "https://mirrors.sdu.edu.cn/jetbrains/",
      "bytes": 2913,
-     "ms": 0.238
+     "ms": 0.217
     },
     {
      "url": "https://mirrors.sdu.edu.cn/spi_AOSP/",
      "bytes": 2913,
-     "ms": 0.253
+     "ms": 0.24
     }
    ]
   },
   {
-   "host": "27.128.202.121",
+   "host": "mirrors.volces.com",
    "pick": {
-    "url": "http://27.128.202.121:82/iso/Y.iso",
-    "bytes": 262144,
-    "ms": 1.467
+    "url": "http://mirrors.volces.com/kafka/",
+    "bytes": 95591,
+    "ms": 0.646
    },
-   "alts": []
+   "alts": [
+    {
+     "url": "http://mirrors.volces.com/spark/spark-3.5.1/",
+     "bytes": 95591,
+     "ms": 0.687
+    },
+    {
+     "url": "http://mirrors.volces.com/hadoop/common/",
+     "bytes": 95591,
+     "ms": 0.93
+    }
+   ]
   },
   {
    "host": "download.edgepulse.com.cn",
    "pick": {
     "url": "https://download.edgepulse.com.cn/image/EdgePulseOS_OP_amd64.iso",
     "bytes": 262144,
-    "ms": 0.529
+    "ms": 0.518
+   },
+   "alts": []
+  },
+  {
+   "host": "27.128.202.121",
+   "pick": {
+    "url": "http://27.128.202.121:82/iso/Y.iso",
+    "bytes": 262144,
+    "ms": 0.18
    },
    "alts": []
   },
@@ -449,32 +401,32 @@
    "pick": {
     "url": "https://xyydcloud-1375085261.cos.ap-beijing.myqcloud.com/image/XYYD-Cloud-Auto-Install-20260907.iso",
     "bytes": 262144,
-    "ms": 0.405
+    "ms": 0.355
    },
    "alts": []
   },
   {
    "host": "vip.123pan.cn",
    "pick": {
-    "url": "https://vip.123pan.cn/1824237664/26965051",
+    "url": "https://vip.123pan.cn/1824237664/23503585",
     "bytes": 262144,
-    "ms": 0.544
+    "ms": 0.545
    },
    "alts": [
     {
-     "url": "https://vip.123pan.cn/1824237664/23503585",
+     "url": "https://vip.123pan.cn/1824237664/26965051",
      "bytes": 262144,
-     "ms": 0.637
+     "ms": 0.569
     },
     {
      "url": "https://vip.123pan.cn/1824237664/25076352",
      "bytes": 262144,
-     "ms": 0.672
+     "ms": 0.617
     },
     {
      "url": "https://vip.123pan.cn/1824237664/23499068",
      "bytes": 262144,
-     "ms": 1.045
+     "ms": 0.896
     }
    ]
   },
@@ -483,96 +435,61 @@
    "pick": {
     "url": "https://oss.shuguangyun.cc/d/sgy/ShuGuang-%E6%96%B9%E8%88%9F-3.6.4.iso?sign=WHZBnRVvsrk_1WtvpYPSCROHOjxzl4az-xmVFieu4JQ=:0",
     "bytes": 262144,
-    "ms": 0.294
+    "ms": 0.204
    },
    "alts": []
   }
  ],
  "bt": [
   {
+   "pick": {
+    "url": "magnet:?xt=urn:btih:2e8e44068b254814ea1a7d4969a9af1d78e0f51f&dn=ubuntu-22.04.5-desktop-amd64.iso&tr=https://torrent.ubuntu.com/announce&tr=https://ipv6.torrent.ubuntu.com/announce",
+    "bytes": 0,
+    "ms": 0.0
+   },
+   "host": "magnet",
+   "prov": "unknown",
+   "isp": "unknown"
+  },
+  {
+   "pick": {
+    "url": "magnet:?xt=urn:btih:95c6c298c84fee2eee10c044d673537da158f0f8&dn=ubuntu-22.04.5-live-server-amd64.iso&tr=https://torrent.ubuntu.com/announce&tr=https://ipv6.torrent.ubuntu.com/announce",
+    "bytes": 0,
+    "ms": 0.0
+   },
+   "host": "magnet",
+   "prov": "unknown",
+   "isp": "unknown"
+  },
+  {
    "host": "mirrors.aliyun.com",
    "pick": {
-    "url": "https://mirrors.aliyun.com/docker-ce/",
-    "bytes": 29488,
-    "ms": 0.026
+    "url": "https://mirrors.aliyun.com/apache/maven/",
+    "bytes": 34666,
+    "ms": 0.034
    },
    "alts": [
     {
-     "url": "https://mirrors.aliyun.com/pytorch-wheels/cpu/",
-     "bytes": 262144,
-     "ms": 0.102
-    },
-    {
      "url": "https://mirrors.aliyun.com/git/",
      "bytes": 24886,
-     "ms": 0.338
+     "ms": 0.04
+    },
+    {
+     "url": "https://mirrors.aliyun.com/docker-ce/",
+     "bytes": 29488,
+     "ms": 0.043
     },
     {
      "url": "https://mirrors.aliyun.com/apache/tomcat/",
      "bytes": 30133,
-     "ms": 0.342
+     "ms": 0.046
     },
     {
-     "url": "https://mirrors.aliyun.com/apache/maven/",
-     "bytes": 34666,
-     "ms": 0.417
-    }
-   ],
-   "prov": "unknown",
-   "isp": "unknown"
-  },
-  {
-   "host": "mirrors.aliyun.com",
-   "pick": {
-    "url": "https://mirrors.aliyun.com/mysql/",
-    "bytes": 39717,
-    "ms": 0.063
-   },
-   "alts": [
-    {
-     "url": "https://mirrors.aliyun.com/ceph/",
-     "bytes": 74314,
-     "ms": 0.619
-    }
-   ],
-   "prov": "unknown",
-   "isp": "unknown"
-  },
-  {
-   "host": "mirrors.pku.edu.cn",
-   "pick": {
-    "url": "https://mirrors.pku.edu.cn/epel/",
-    "bytes": 597,
-    "ms": 0.096
-   },
-   "alts": [
-    {
-     "url": "https://mirrors.pku.edu.cn/opensuse/",
-     "bytes": 597,
-     "ms": 0.111
-    },
-    {
-     "url": "https://mirrors.pku.edu.cn/centos/",
-     "bytes": 597,
-     "ms": 0.121
-    },
-    {
-     "url": "https://mirrors.pku.edu.cn/pypi/simple/",
+     "url": "https://mirrors.aliyun.com/pytorch-wheels/cpu/",
      "bytes": 262144,
-     "ms": 1.453
+     "ms": 0.084
     }
    ],
-   "prov": "unknown",
-   "isp": "unknown"
-  },
-  {
-   "host": "mirror.sjtu.edu.cn",
-   "pick": {
-    "url": "https://mirror.sjtu.edu.cn/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso",
-    "bytes": 5093,
-    "ms": 0.102
-   },
-   "alts": [],
    "prov": "unknown",
    "isp": "unknown"
   },
@@ -581,99 +498,35 @@
    "pick": {
     "url": "https://mirrors.cloud.tencent.com/python/",
     "bytes": 149,
-    "ms": 0.122
+    "ms": 0.04
    },
    "alts": [
-    {
-     "url": "https://mirrors.cloud.tencent.com/pypi/",
-     "bytes": 826,
-     "ms": 0.15
-    },
     {
      "url": "https://mirrors.cloud.tencent.com/gradle/",
      "bytes": 262144,
-     "ms": 0.19
+     "ms": 0.06
+    },
+    {
+     "url": "https://mirrors.cloud.tencent.com/pypi/",
+     "bytes": 826,
+     "ms": 0.151
     }
    ],
    "prov": "unknown",
    "isp": "unknown"
   },
   {
-   "host": "mirrors.nju.edu.cn",
+   "host": "mirrors.aliyun.com",
    "pick": {
-    "url": "https://mirrors.nju.edu.cn/debian/",
-    "bytes": 8027,
-    "ms": 0.123
+    "url": "https://mirrors.aliyun.com/ceph/",
+    "bytes": 74314,
+    "ms": 0.056
    },
    "alts": [
     {
-     "url": "https://mirrors.nju.edu.cn/postgresql/",
-     "bytes": 7572,
-     "ms": 0.133
-    },
-    {
-     "url": "https://mirrors.nju.edu.cn/apache/tomcat/",
-     "bytes": 6907,
-     "ms": 0.137
-    },
-    {
-     "url": "https://mirrors.nju.edu.cn/gnu/",
-     "bytes": 66909,
-     "ms": 0.181
-    }
-   ],
-   "prov": "unknown",
-   "isp": "unknown"
-  },
-  {
-   "host": "mirrors.huaweicloud.com",
-   "pick": {
-    "url": "https://mirrors.huaweicloud.com/deepin-cd/",
-    "bytes": 7147,
-    "ms": 0.16
-   },
-   "alts": [
-    {
-     "url": "https://mirrors.huaweicloud.com/qt/qt/5.15.2/qt-everywhere-opensource-src-5.15.2.tar.xz",
-     "bytes": 12434,
-     "ms": 0.182
-    },
-    {
-     "url": "https://mirrors.huaweicloud.com/python/3.11.8/Python-3.11.8.tgz",
-     "bytes": 262144,
-     "ms": 0.997
-    },
-    {
-     "url": "https://mirrors.huaweicloud.com/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-2009.iso",
-     "bytes": 262144,
-     "ms": 1.462
-    },
-    {
-     "url": "https://mirrors.huaweicloud.com/nginx/nginx-1.24.0.tar.gz",
-     "bytes": 262144,
-     "ms": 1.631
-    }
-   ],
-   "prov": "unknown",
-   "isp": "unknown"
-  },
-  {
-   "host": "mirrors.ustc.edu.cn",
-   "pick": {
-    "url": "https://mirrors.ustc.edu.cn/pypi/web/simple/",
-    "bytes": 879,
-    "ms": 0.219
-   },
-   "alts": [
-    {
-     "url": "https://mirrors.ustc.edu.cn/debian-cd/",
-     "bytes": 7197,
-     "ms": 1.007
-    },
-    {
-     "url": "https://mirrors.ustc.edu.cn/ceph/",
-     "bytes": 53118,
-     "ms": 1.038
+     "url": "https://mirrors.aliyun.com/mysql/",
+     "bytes": 39717,
+     "ms": 0.068
     }
    ],
    "prov": "unknown",
@@ -684,18 +537,132 @@
    "pick": {
     "url": "https://cdn.npmmirror.com/binaries/node/v20.11.1/node-v20.11.1-linux-x64.tar.gz",
     "bytes": 262144,
-    "ms": 0.332
+    "ms": 0.073
    },
    "alts": [
     {
      "url": "https://cdn.npmmirror.com/binaries/node/v22.14.0/node-v22.14.0-linux-x64.tar.gz",
      "bytes": 262144,
-     "ms": 0.387
+     "ms": 0.204
     },
     {
      "url": "https://cdn.npmmirror.com/binaries/electron/v31.0.0/electron-v31.0.0-linux-x64.zip",
      "bytes": 262144,
-     "ms": 0.503
+     "ms": 0.252
+    }
+   ],
+   "prov": "unknown",
+   "isp": "unknown"
+  },
+  {
+   "host": "mirror.sjtu.edu.cn",
+   "pick": {
+    "url": "https://mirror.sjtu.edu.cn/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso",
+    "bytes": 5093,
+    "ms": 0.113
+   },
+   "alts": [],
+   "prov": "unknown",
+   "isp": "unknown"
+  },
+  {
+   "host": "mirrors.nju.edu.cn",
+   "pick": {
+    "url": "https://mirrors.nju.edu.cn/postgresql/",
+    "bytes": 7572,
+    "ms": 0.114
+   },
+   "alts": [
+    {
+     "url": "https://mirrors.nju.edu.cn/apache/tomcat/",
+     "bytes": 6907,
+     "ms": 0.115
+    },
+    {
+     "url": "https://mirrors.nju.edu.cn/debian/",
+     "bytes": 8027,
+     "ms": 0.128
+    },
+    {
+     "url": "https://mirrors.nju.edu.cn/gnu/",
+     "bytes": 66909,
+     "ms": 0.188
+    }
+   ],
+   "prov": "unknown",
+   "isp": "unknown"
+  },
+  {
+   "host": "mirrors.pku.edu.cn",
+   "pick": {
+    "url": "https://mirrors.pku.edu.cn/opensuse/",
+    "bytes": 597,
+    "ms": 0.119
+   },
+   "alts": [
+    {
+     "url": "https://mirrors.pku.edu.cn/epel/",
+     "bytes": 597,
+     "ms": 0.131
+    },
+    {
+     "url": "https://mirrors.pku.edu.cn/centos/",
+     "bytes": 597,
+     "ms": 0.135
+    },
+    {
+     "url": "https://mirrors.pku.edu.cn/pypi/simple/",
+     "bytes": 262144,
+     "ms": 0.325
+    }
+   ],
+   "prov": "unknown",
+   "isp": "unknown"
+  },
+  {
+   "host": "mirrors.huaweicloud.com",
+   "pick": {
+    "url": "https://mirrors.huaweicloud.com/qt/qt/5.15.2/qt-everywhere-opensource-src-5.15.2.tar.xz",
+    "bytes": 12434,
+    "ms": 0.166
+   },
+   "alts": [
+    {
+     "url": "https://mirrors.huaweicloud.com/deepin-cd/",
+     "bytes": 7147,
+     "ms": 0.169
+    },
+    {
+     "url": "https://mirrors.huaweicloud.com/nginx/nginx-1.24.0.tar.gz",
+     "bytes": 262144,
+     "ms": 0.375
+    },
+    {
+     "url": "https://mirrors.huaweicloud.com/python/3.11.8/Python-3.11.8.tgz",
+     "bytes": 262144,
+     "ms": 0.409
+    }
+   ],
+   "prov": "unknown",
+   "isp": "unknown"
+  },
+  {
+   "host": "mirrors.ustc.edu.cn",
+   "pick": {
+    "url": "https://mirrors.ustc.edu.cn/pypi/web/simple/",
+    "bytes": 879,
+    "ms": 0.31
+   },
+   "alts": [
+    {
+     "url": "https://mirrors.ustc.edu.cn/debian-cd/",
+     "bytes": 7197,
+     "ms": 0.996
+    },
+    {
+     "url": "https://mirrors.ustc.edu.cn/ceph/",
+     "bytes": 53118,
+     "ms": 1.061
     }
    ],
    "prov": "unknown",
@@ -706,13 +673,13 @@
    "pick": {
     "url": "https://mirrors.ustc.edu.cn/gnu/",
     "bytes": 92496,
-    "ms": 0.359
+    "ms": 0.481
    },
    "alts": [
     {
      "url": "https://mirrors.ustc.edu.cn/gimp/",
      "bytes": 13743,
-     "ms": 0.744
+     "ms": 0.79
     }
    ],
    "prov": "unknown",
@@ -723,36 +690,9 @@
    "pick": {
     "url": "https://mirrors.huaweicloud.com/nginx/",
     "bytes": 284489,
-    "ms": 0.545
+    "ms": 0.524
    },
    "alts": [],
-   "prov": "unknown",
-   "isp": "unknown"
-  },
-  {
-   "host": "mirrors.zju.edu.cn",
-   "pick": {
-    "url": "https://mirrors.zju.edu.cn/epel/",
-    "bytes": 39829,
-    "ms": 1.335
-   },
-   "alts": [
-    {
-     "url": "https://mirrors.zju.edu.cn/python/3.11.8/Python-3.11.8.tgz",
-     "bytes": 262144,
-     "ms": 1.803
-    },
-    {
-     "url": "https://mirrors.zju.edu.cn/centos/",
-     "bytes": 39829,
-     "ms": 3.493
-    },
-    {
-     "url": "https://mirrors.zju.edu.cn/anaconda/miniconda/",
-     "bytes": 39829,
-     "ms": 3.7
-    }
-   ],
    "prov": "unknown",
    "isp": "unknown"
   },
@@ -761,13 +701,40 @@
    "pick": {
     "url": "https://mirrors.sohu.com/centos/",
     "bytes": 15721,
-    "ms": 2.633
+    "ms": 1.924
    },
    "alts": [
     {
      "url": "https://mirrors.sohu.com/python/",
      "bytes": 47123,
-     "ms": 3.715
+     "ms": 18.861
+    }
+   ],
+   "prov": "unknown",
+   "isp": "unknown"
+  },
+  {
+   "host": "mirrors.zju.edu.cn",
+   "pick": {
+    "url": "https://mirrors.zju.edu.cn/centos/",
+    "bytes": 39829,
+    "ms": 3.148
+   },
+   "alts": [
+    {
+     "url": "https://mirrors.zju.edu.cn/epel/",
+     "bytes": 39829,
+     "ms": 7.226
+    },
+    {
+     "url": "https://mirrors.zju.edu.cn/python/3.11.8/Python-3.11.8.tgz",
+     "bytes": 262144,
+     "ms": 7.819
+    },
+    {
+     "url": "https://mirrors.zju.edu.cn/anaconda/miniconda/",
+     "bytes": 39829,
+     "ms": 11.49
     }
    ],
    "prov": "unknown",
