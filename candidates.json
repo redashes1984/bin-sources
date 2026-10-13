@@ -13,7 +13,8 @@
         "maven/maven-3.9.6.bin.tar.gz",
         "gradle/gradle-8.6-bin.zip.gz",
         "golang/go1.22.0.linux-amd64.tar.gz"
-      ]
+      ],
+      "prov": "浙江"
     },
     {
       "host": "mirrors.tuna.tsinghua.edu.cn",
@@ -25,7 +26,9 @@
         "anaconda/miniconda/",
         "git-lfs/",
         "opensuse/distribution/"
-      ]
+      ],
+      "prov": "北京",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.huaweicloud.com",
@@ -38,7 +41,8 @@
         "qt/qt/5.15.2/qt-everywhere-opensource-src-5.15.2.tar.xz",
         "kubernetes-release/release/",
         "deepin-cd/"
-      ]
+      ],
+      "prov": "广东"
     },
     {
       "host": "mirrors.cloud.tencent.com",
@@ -50,7 +54,8 @@
         "nginx/nginx-1.24.0.tar.gz",
         "git/git-2.45.0.tar.gz",
         "gradle/"
-      ]
+      ],
+      "prov": "广东"
     },
     {
       "host": "cdn.npmmirror.com",
@@ -61,7 +66,8 @@
         "binaries/electron/v31.0.0/electron-v31.0.0-linux-x64.zip",
         "binaries/nginx/nginx-1.24.0.tar.gz",
         "binaries/python/3.11.8/Python-3.11.8.tgz"
-      ]
+      ],
+      "prov": "浙江"
     },
     {
       "host": "mirrors.ustc.edu.cn",
@@ -72,7 +78,9 @@
         "lfs/LFS-12.2.iso",
         "debian-cd/current-only-images/",
         "miniconda/"
-      ]
+      ],
+      "prov": "安徽",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.zju.edu.cn",
@@ -82,7 +90,9 @@
         "CentOS/",
         "epel/",
         "miniconda/"
-      ]
+      ],
+      "prov": "浙江",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.nju.edu.cn",
@@ -92,7 +102,9 @@
         "debian/",
         "postgresql/",
         "redis/"
-      ]
+      ],
+      "prov": "江苏",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.sjtug.sjtu.edu.cn",
@@ -101,7 +113,9 @@
         "cpython/ftp/python/3.11.8/Python-3.11.8.tgz",
         "qt/",
         "nodejs-release/"
-      ]
+      ],
+      "prov": "上海",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.pku.edu.cn",
@@ -112,7 +126,9 @@
         "epel/",
         "fedora/",
         "zabbix/"
-      ]
+      ],
+      "prov": "北京",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.bfsu.edu.cn",
@@ -123,7 +139,9 @@
         "kde/",
         "gimp/",
         "AOSP/host_tools/"
-      ]
+      ],
+      "prov": "北京",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.163.com",
@@ -133,7 +151,8 @@
         "ceph/",
         "mysql/",
         "nginx/"
-      ]
+      ],
+      "prov": "广东"
     },
     {
       "host": "mirrors.sohu.com",
@@ -142,7 +161,8 @@
         "centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso",
         "git/",
         "nodejs/"
-      ]
+      ],
+      "prov": "北京"
     },
     {
       "host": "mirrors.volces.com",
@@ -152,7 +172,8 @@
         "hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz",
         "spark/spark-3.5.1/",
         "kafka/"
-      ]
+      ],
+      "prov": "北京"
     },
     {
       "host": "mirrors.bit.edu.cn",
@@ -162,7 +183,9 @@
         "centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso",
         "epel/",
         "git-server/"
-      ]
+      ],
+      "prov": "北京",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.upyun.qq.com",
@@ -171,7 +194,8 @@
         "openresty/",
         "perl/",
         "python/"
-      ]
+      ],
+      "prov": "上海"
     },
     {
       "host": "mirrors.sdu.edu.cn",
@@ -180,7 +204,9 @@
         "spi_AOSP/",
         "jetbrains/",
         "gcc/"
-      ]
+      ],
+      "prov": "山东",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.hust.edu.cn",
@@ -189,7 +215,9 @@
         "apache/",
         "ceph/",
         "git-lfs/"
-      ]
+      ],
+      "prov": "湖北",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.bjtu.edu.cn",
@@ -198,21 +226,25 @@
         "cmake/",
         "gimp/",
         "gradle/"
-      ]
+      ],
+      "prov": "北京",
+      "isp": "教育网"
     },
     {
       "host": "download.edgepulse.com.cn",
       "base": "https://download.edgepulse.com.cn",
       "paths": [
         "image/EdgePulseOS_OP_amd64.iso"
-      ]
+      ],
+      "prov": "unknown"
     },
     {
       "host": "xyydcloud-1375085261.cos.ap-beijing.myqcloud.com",
       "base": "https://xyydcloud-1375085261.cos.ap-beijing.myqcloud.com",
       "paths": [
         "image/XYYD-Cloud-Auto-Install-20260907.iso"
-      ]
+      ],
+      "prov": "北京"
     },
     {
       "host": "vip.123pan.cn",
@@ -222,14 +254,16 @@
         "1824237664/25076352",
         "1824237664/23503585",
         "1824237664/26965051"
-      ]
+      ],
+      "prov": "unknown"
     },
     {
       "host": "oss.shuguangyun.cc",
       "base": "https://oss.shuguangyun.cc",
       "paths": [
         "d/sgy/ShuGuang-%E6%96%B9%E8%88%9F-3.6.4.iso?sign=WHZBnRVvsrk_1WtvpYPSCROHOjxzl4az-xmVFieu4JQ=:0"
-      ]
+      ],
+      "prov": "unknown"
     }
   ],
   "http": [
@@ -242,7 +276,8 @@
         "docker-ce/",
         "mariadb/mariadb-10.6.14-linux-systemd-x86_64.tar.gz",
         "tomcat/tomcat-9/"
-      ]
+      ],
+      "prov": "浙江"
     },
     {
       "host": "mirrors.tuna.tsinghua.edu.cn",
@@ -251,7 +286,9 @@
         "anaconda/archive/Anaconda3-2024.02-1-Linux-x86_64.sh",
         "pypi/simple/",
         "gentoo/releases/amd64/"
-      ]
+      ],
+      "prov": "北京",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.huaweicloud.com",
@@ -261,7 +298,8 @@
         "deepin-cd/",
         "kubernetes-release/release/",
         "gradle/"
-      ]
+      ],
+      "prov": "广东"
     },
     {
       "host": "mirrors.cloud.tencent.com",
@@ -271,7 +309,8 @@
         "python/",
         "cmake/files/",
         "git/"
-      ]
+      ],
+      "prov": "广东"
     },
     {
       "host": "registry.npmmirror.com",
@@ -279,7 +318,8 @@
       "paths": [
         "-/binary/node/v20.11.1/node-v20.11.1-linux-x64.tar.gz",
         "-/binary/electron/v31.0.0/"
-      ]
+      ],
+      "prov": "浙江"
     },
     {
       "host": "mirrors.ustc.edu.cn",
@@ -289,7 +329,9 @@
         "gentoo/releases/amd64/",
         "lfs/LFS-12.2.iso",
         "ceph/"
-      ]
+      ],
+      "prov": "安徽",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.zju.edu.cn",
@@ -299,7 +341,9 @@
         "epel/",
         "miniconda/",
         "maven/"
-      ]
+      ],
+      "prov": "浙江",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.nju.edu.cn",
@@ -309,7 +353,9 @@
         "postgresql/",
         "redis/",
         "tomcat/"
-      ]
+      ],
+      "prov": "江苏",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.sjtug.sjtu.edu.cn",
@@ -319,7 +365,9 @@
         "qt/",
         "nodejs-release/",
         "maven/"
-      ]
+      ],
+      "prov": "上海",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.pku.edu.cn",
@@ -329,7 +377,9 @@
         "fedora/",
         "zabbix/",
         "ceph/"
-      ]
+      ],
+      "prov": "北京",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.bfsu.edu.cn",
@@ -339,7 +389,9 @@
         "kde/",
         "gimp/",
         "xfce/"
-      ]
+      ],
+      "prov": "北京",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.163.com",
@@ -349,7 +401,8 @@
         "mysql/",
         "nginx/",
         "gcc/"
-      ]
+      ],
+      "prov": "广东"
     },
     {
       "host": "mirrors.sohu.com",
@@ -358,7 +411,8 @@
         "centos/",
         "git/",
         "nodejs/"
-      ]
+      ],
+      "prov": "北京"
     },
     {
       "host": "mirrors.volces.com",
@@ -367,7 +421,8 @@
         "hadoop/common/",
         "spark/spark-3.5.1/",
         "kafka/"
-      ]
+      ],
+      "prov": "北京"
     },
     {
       "host": "mirrors.bit.edu.cn",
@@ -376,7 +431,9 @@
         "bash/",
         "epel/",
         "git-server/"
-      ]
+      ],
+      "prov": "北京",
+      "isp": "教育网"
     },
     {
       "host": "mirrors.hust.edu.cn",
@@ -385,14 +442,17 @@
         "apache/",
         "ceph/",
         "git-lfs/"
-      ]
+      ],
+      "prov": "湖北",
+      "isp": "教育网"
     },
     {
       "host": "27.128.202.121",
       "base": "http://27.128.202.121:82",
       "paths": [
         "iso/Y.iso"
-      ]
+      ],
+      "prov": "unknown"
     }
   ],
   "bt": {
@@ -427,7 +487,8 @@
           "qt/qt/5.15.2/qt-everywhere-opensource-src-5.15.2.tar.xz",
           "ubuntu-releases/22.04.5/ubuntu-22.04.5-desktop-amd64.iso",
           "ubuntu-releases/22.04/ubuntu-22.04.5-live-server-amd64.iso"
-        ]
+        ],
+        "prov": "广东"
       },
       {
         "host": "mirrors.aliyun.com",
@@ -438,7 +499,8 @@
           "docker-ce/",
           "apache/tomcat/",
           "apache/maven/"
-        ]
+        ],
+        "prov": "浙江"
       },
       {
         "host": "mirrors.cloud.tencent.com",
@@ -447,7 +509,8 @@
           "python/",
           "gradle/",
           "pypi/"
-        ]
+        ],
+        "prov": "广东"
       },
       {
         "host": "cdn.npmmirror.com",
@@ -456,7 +519,8 @@
           "binaries/node/v20.11.1/node-v20.11.1-linux-x64.tar.gz",
           "binaries/node/v22.14.0/node-v22.14.0-linux-x64.tar.gz",
           "binaries/electron/v31.0.0/electron-v31.0.0-linux-x64.zip"
-        ]
+        ],
+        "prov": "浙江"
       },
       {
         "host": "mirrors.ustc.edu.cn",
@@ -465,14 +529,18 @@
           "pypi/web/simple/",
           "debian-cd/",
           "ceph/"
-        ]
+        ],
+        "prov": "安徽",
+        "isp": "教育网"
       },
       {
         "host": "mirror.sjtu.edu.cn",
         "base": "https://mirror.sjtu.edu.cn",
         "paths": [
           "centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso"
-        ]
+        ],
+        "prov": "上海",
+        "isp": "教育网"
       },
       {
         "host": "mirrors.pku.edu.cn",
@@ -482,7 +550,9 @@
           "epel/",
           "centos/",
           "opensuse/"
-        ]
+        ],
+        "prov": "北京",
+        "isp": "教育网"
       },
       {
         "host": "mirrors.zju.edu.cn",
@@ -492,7 +562,9 @@
           "centos/",
           "epel/",
           "anaconda/miniconda/"
-        ]
+        ],
+        "prov": "浙江",
+        "isp": "教育网"
       },
       {
         "host": "mirrors.nju.edu.cn",
@@ -502,7 +574,9 @@
           "postgresql/",
           "gnu/",
           "apache/tomcat/"
-        ]
+        ],
+        "prov": "江苏",
+        "isp": "教育网"
       },
       {
         "host": "mirrors.ustc.edu.cn",
@@ -510,7 +584,9 @@
         "paths": [
           "gnu/",
           "gimp/"
-        ]
+        ],
+        "prov": "安徽",
+        "isp": "教育网"
       },
       {
         "host": "mirrors.aliyun.com",
@@ -518,14 +594,16 @@
         "paths": [
           "ceph/",
           "mysql/"
-        ]
+        ],
+        "prov": "浙江"
       },
       {
         "host": "mirrors.huaweicloud.com",
         "base": "https://mirrors.huaweicloud.com",
         "paths": [
           "nginx/"
-        ]
+        ],
+        "prov": "广东"
       },
       {
         "host": "mirrors.sohu.com",
@@ -533,7 +611,8 @@
         "paths": [
           "centos/",
           "python/"
-        ]
+        ],
+        "prov": "北京"
       }
     ]
   }
