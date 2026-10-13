@@ -424,7 +424,9 @@
           "centos/7/isos/x86_64/CentOS-7-x86_64-Everything-2009.iso",
           "nginx/nginx-1.24.0.tar.gz",
           "deepin-cd/",
-          "qt/qt/5.15.2/qt-everywhere-opensource-src-5.15.2.tar.xz"
+          "qt/qt/5.15.2/qt-everywhere-opensource-src-5.15.2.tar.xz",
+          "ubuntu-releases/22.04.5/ubuntu-22.04.5-desktop-amd64.iso",
+          "ubuntu-releases/22.04/ubuntu-22.04.5-live-server-amd64.iso"
         ]
       },
       {
