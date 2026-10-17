@@ -470,9 +470,7 @@
       "http://announce.sktorrent.eu:6969/announce",
       "http://bittorrent-tracker.e-n-c-r-y-p-t.net:1337/announce",
       "http://bt1.archive.org:6969/announce",
-      "http://bt2.archive.org:6969/announce",
-      "http://ipv4announce.sktorrent.eu:6969/announce",
-      "http://nyaa.tracker.wf:7777/announce"
+      "http://bt2.archive.org:6969/announce"
     ],
     "_comment": "bt 池 = 家宽用户真会下的大文件（软件包/发行版镜像），worker curl GET 直链，BT 超时阈值 900s。prov/isp 标签供 worker 按三子开关组合过滤对端。",
     "entries": [
