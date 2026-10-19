@@ -480,11 +480,7 @@
         "host": "mirrors.ustc.edu.cn",
         "base": "https://mirrors.ustc.edu.cn",
         "paths": [
-          "python/3.11.8/Python-3.11.8.tgz",
           "deepin-cd/",
-          "ubuntu-releases/26.04.1/ubuntu-26.04.1-live-server-amd64.iso",
-          "ubuntu-releases/24.04.5.1/ubuntu-24.04.5.1-desktop-amd64.iso",
-          "pypi/web/simple/",
           "gnu/"
         ],
         "prov": "安徽",
@@ -526,7 +522,6 @@
         "host": "mirrors.ustc.edu.cn",
         "base": "https://mirrors.ustc.edu.cn",
         "paths": [
-          "pypi/web/simple/",
           "debian-cd/",
           "ceph/"
         ],
